@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Home</title>
+    {% load staticfiles %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<script type="applijewelleryion/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="{% static 'css/bootstrap.css' %}" rel='stylesheet' type='text/css' />
+<link href="{% static 'css/style.css'%}" rel='stylesheet' type='text/css' />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+<link href="{% static 'css/font-awesome.css'%}" rel="stylesheet">
+<!-- Custom Theme files -->
+    <script src="{% static 'js/jquery-1.12.0.min.js'%}"></script>
+<script src="{% static 'js/bootstrap.min.js'%}"></script>
+<!--animate-->
+<link href="{% static 'css/animate.css'%}" rel="stylesheet" type="text/css" media="all">
+<script src="{% static 'js/wow.min.js' %}"></script>
+	<script>
+		 new WOW().init();
+	</script>
+<!--//end-animate-->
+</head>
+<body>
+<!--- header ---->
+<div class="header">
+	<div class="container">
+		<div class="logo wow fadeInDown animated" >
+			Asset <span>management</span>
+		</div>
+
+		<div class="clearfix"></div>
+	</div>
+</div>
+<!--- /header ---->
+<!--- banner ---->
+<div class="banner">
+	<div class="container">
+		<h1 class="wow zoomIn animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: zoomIn;">For Passion and Profession</h1>
+	</div>
+</div>
+<div class="container">
+	<div class="col-md-5 bann-info1 wow fadeInLeft animated" >
+		<img src="/static/imgs/asset.png" width="160" height="135" />
+		<h3>THANKS FOR YOUR CONTRIBUTION TO ASSET CONSENSUS DATA</h3>
+	</div>
+	<div class="col-md-7 bann-info wow fadeInRight animated" >
+		<h2>Login</h2>
+		<form class="form-signin"id="form1" action="/index/" method="post">
+        <div class="ban-top">
+			<div class="bnr-left">
+				<label class="inputLabel">Username</label>
+				<input class="city" name="username" type="text" value="Enter your ID" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your ID';}" required=>
+			</div>
+			<div class="bnr-left">
+				<label class="inputLabel">Password</label>
+				<input class="city" name="password" type="password"  required=>
+			</div>
+				<div class="clearfix"></div>
+		</div>
+		<div class="sear">
+                <button class="seabtn" type="submit">OK</button>
+		</div>
+        </form>
+	</div>
+	<div class="clearfix"></div>
+</div>
+</body>
+</html>

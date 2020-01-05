@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Home</title>
+    {% load staticfiles %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<script type="applijewelleryion/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="{% static 'css/bootstrap.css' %}" rel='stylesheet' type='text/css' />
+<link href="{% static 'css/style.css'%}" rel='stylesheet' type='text/css' />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+<link href="{% static 'css/font-awesome.css'%}" rel="stylesheet">
+<!-- Custom Theme files -->
+    <script src="{% static 'js/jquery-1.12.0.min.js'%}"></script>
+<script src="{% static 'js/bootstrap.min.js'%}"></script>
+<!--animate-->
+<link href="{% static 'css/animate.css'%}" rel="stylesheet" type="text/css" media="all">
+<script src="{% static 'js/wow.min.js' %}"></script>
+	<script>
+		 new WOW().init();
+	</script>
+<!--//end-animate-->
+</head>
+<!--- header ---->
+<div class="header">
+	<div class="container">
+		<div class="logo wow fadeInDown animated" style="width:1200px">
+            <form action="/loginsuc/" method="POST">Asset <span>management</span><button type="submit"  name="change" value={{name}} style="float:right;font-size:14px;">修改密码</button></form>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</div>
+<!--- /header ---->
+<!--- banner ---->
+<div class="banner">
+	<div class="container">
+		<h1 class="wow zoomIn animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: zoomIn;">Good morning,{{name}}</h1>
+	</div>
+</div>
+<div class="container">
+    <div class="col-md-5 bann-info1 wow fadeInLeft animated" >
+        <form action="/loginsuc/" method="POST"  style="width:400px;height:60px;text-align:center;position: absolute;left: 100px;top: 70px;">
+            <input name="t" type="hidden"  />
+                <div style="font-size:13px">请输入日期:<input type="date" name="days" value={{t}} style="width:150px;height:30px"/><button type="submit" name="day" value={{name}}>提交</button>
+                    </div>
+            <input name="hid" type="hidden"  value={{name}}>
+            <div style="overflow-y: scroll; overflow-x:hidden;height: 280px;width:350px;">
+                <table class="zebra"  width="100%">
+                    <thead>
+                        <tr>
+                        <th>时间</th>
+                        <th>期货</th>
+                        <th>打分</th>
+                        <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody style="text-align: left">
+                    {% for svn in dic %}
+                    <tr>
+                      <td>{{svn.time|date:"m-d H:i"}}</td>
+                      <td>{{svn.ids}}</td>
+                      <td>{{svn.score}}</td>
+                      <td><button type="submit" onclick="this.form.t.value={{svn.id}}" name={{svn.id}}>删除</button></td>
+                     </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-7 bann-info wow fadeInRight animated" >
+        <form class="form-signin"id="form2"  action="/loginsuc/" method="post">
+            <div class="ban-top">
+                <div class="bnr-left">
+                    <label class="inputLabel">Futures Type</label>
+                    <input class="city" type="text"  name="cat" list="ide"  />
+                        <datalist id="ide">
+                        <option value="IC 中证500" />
+                        <option value="IC 沪深300" />
+                        <option value="IH 上证50" />
+                        <option value="IF 国债5年"/>
+                        <option value="T 国债10年" />
+                        <option value="ag 白银" />
+                        <option value="au 黄金" />
+                        <option value="al 铝" />
+                        <option value="cu 铜" />
+                        <option value="ni 镍" />
+                        <option value="pb 铅" />
+                        <option value="zn 锌" />
+                        <option value="i 铁矿石" />
+                        <option value="j 焦炭" />
+                        <option value="jm 焦煤" />
+                        <option value="hc 热轧卷板" />
+                        <option value="rb 螺纹钢" />
+                        <option value="ZC 动力煤" />
+                        <option value="ru 橡胶" />
+                        <option value="v PVC" />
+                        <option value="l 塑料" />
+                        <option value="pp 聚丙烯" />
+                        <option value="bu 沥青" />
+                        <option value="FG 玻璃" />
+                        <option value="MA 甲醇" />
+                        <option value="TA PTA" />
+                        <option value="c 玉米" />
+                        <option value="cs 玉米淀粉" />
+                        <option value="a 豆一" />
+                        <option value="m 豆粕" />
+                        <option value="p 棕榈油" />
+                        <option value="y 豆油" />
+                        <option value="jd 鸡蛋" />
+                        <option value="CF 郑棉" />
+                        <option value="OI 菜油" />
+                        <option value="RM 菜粕" />
+                        <option value="SR 白糖" />
+                        <option value="WH 强麦" />
+
+                </datalist>
+                </div>
+                <div class="bnr-left">
+                    <label class="inputLabel">Score</label>
+                    <select name="sco" placeholder="预期打分">
+                    <option value =-2>-2 看跌</option>
+                    <option value =-1>-1 轻度看跌</option>
+                    <option value=0>0 中性</option>
+                    <option value=1>1 轻度看涨</option>
+                    <option value=2>2 看涨</option>
+                </select>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="ban-bottom">
+                <div class="bnr-left">
+				    <label class="inputLabel">Prospective Span</label>
+                    <select name="ptime" >
+                        <option value =""></option>
+                        <option value =1>one week</option>
+                        <option value =2>two weeks</option>
+                        <option value=3>one month</option>
+                        <option value=4>three months</option>
+                        <option value=5>one year</option>
+                    </select>
+			    </div>
+			    <div class="bnr-left">
+				    <label class="inputLabel">Prospective Score</label>
+                    <select name="psco">
+                         <option value =""></option>
+                         <option value =-2>-2 看跌</option>
+                         <option value =-1>-1 轻度看跌</option>
+                         <option value=0>0 中性</option>
+                         <option value=1>1 轻度看涨</option>
+                         <option value=2>2 看涨</option>
+                    </select>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="ban-bottom">
+                <div class="bnr-left">
+                    <label class="inputLabel">Your Opinion</label>
+                    <input class="city" type="text"  name="remark" onfocus="this.value = ''; " style="width:655px;">
+			    </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="sear">
+              <button class="seabtn"  type="submit" name="trainss" value={{name}}>提交</button>
+              <button class="seabtn"  type="submit" name="back">返回</button>
+            </div>
+            <div class="clearfix"></div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
